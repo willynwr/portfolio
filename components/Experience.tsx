@@ -18,7 +18,7 @@ const typeLabel: Record<string, string> = {
 
 function ExpCard({ exp, index }: { exp: (typeof experiences)[0]; index: number }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-40px" });
+  const inView = useInView(ref, { once: true });
   const style = typeStyle[exp.type];
 
   return (

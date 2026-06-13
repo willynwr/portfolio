@@ -84,7 +84,7 @@ function ProjectCard({ project, index, inView }: {
 
 export default function Projects() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true });
   const [active, setActive] = useState("all");
 
   const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);

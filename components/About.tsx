@@ -20,7 +20,7 @@ const stats = [
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true });
 
   return (
     <section id="about" className="bg-[#0d0d0d] border-t border-[#1c1c1c]">

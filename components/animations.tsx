@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 
 export function SectionLabel({ num, label }: { num: string; label: string }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const inView = useInView(ref, { once: true });
   return (
     <motion.div
       ref={ref}
@@ -24,10 +24,4 @@ export function SectionLabel({ num, label }: { num: string; label: string }) {
       <span className="text-[#606060] text-xs tracking-widest uppercase">{label}</span>
     </motion.div>
   );
-}
-
-export function useFadeUp(margin = "-60px") {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { once: true, margin });
-  return { ref, inView };
 }
