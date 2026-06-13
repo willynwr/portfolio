@@ -1,5 +1,5 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
+@plugin 'lightswind/plugin';
 @theme inline {
   --font-sans: var(--font-inter);
 }
@@ -15,3 +15,29 @@
 
 /* ─── Smooth scroll ────────────────────────────────────── */
 html { scroll-behavior: smooth; }
+
+/* ─── Aurora orb CSS animations (GPU-accelerated) ──────── */
+@keyframes orb-drift-a {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(20px, -18px) scale(1.04); }
+  66%  { transform: translate(-12px, 22px) scale(0.97); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes orb-drift-b {
+  0%   { transform: translate(0, 0); }
+  40%  { transform: translate(-18px, 20px); }
+  75%  { transform: translate(14px, -14px); }
+  100% { transform: translate(0, 0); }
+}
+
+.orb-a {
+  animation: orb-drift-a 20s ease-in-out infinite;
+  will-change: transform;
+}
+.orb-b {
+  animation: orb-drift-b 25s ease-in-out infinite;
+  will-change: transform;
+}
+.orb-a-delayed { animation: orb-drift-a 20s ease-in-out infinite 4s; will-change: transform; }
+.orb-b-delayed { animation: orb-drift-b 25s ease-in-out infinite 6s; will-change: transform; }
+

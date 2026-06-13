@@ -11,7 +11,7 @@ export default function Footer() {
             wildan<span className="text-[#4f8ef7]/60">.</span>dev
           </span>
           <p className="text-[#404040] text-xs text-center">
-            © {new Date().getFullYear()} Wildan Anwar · Next.js & Tailwind CSS
+            © {new Date().getFullYear()} Wildan Anwar
           </p>
           <div className="flex items-center gap-5">
             {[

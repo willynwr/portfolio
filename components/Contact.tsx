@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { SectionLabel } from "./animations";
+import { SectionLabel, SectionBg } from "./animations";
 
 const contactLinks = [
   { label: "wildanwhat@gmail.com", href: "mailto:wildanwhat@gmail.com" },
@@ -25,8 +25,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="bg-[#0d0d0d] border-t border-[#1c1c1c]">
-      <div className="max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32" ref={ref}>
+    <section id="contact" className="relative bg-[#0d0d0d] border-t border-[#1c1c1c] overflow-hidden">
+      <SectionBg orb="indigo" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32" ref={ref}>
         <SectionLabel num="06" label="Contact" />
 
         <div className="grid lg:grid-cols-2 gap-14 lg:gap-20">

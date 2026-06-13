@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { SectionLabel } from "./animations";
+import { SectionLabel, SectionBg } from "./animations";
 import { skillCategories } from "@/data/skills";
 
 export default function Skills() {
@@ -10,8 +10,9 @@ export default function Skills() {
   const inView = useInView(ref, { once: true });
 
   return (
-    <section id="skills" className="bg-[#0d0d0d] border-t border-[#1c1c1c]">
-      <div className="max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32" ref={ref}>
+    <section id="skills" className="relative bg-[#0d0d0d] border-t border-[#1c1c1c] overflow-hidden">
+      <SectionBg orb="indigo" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32" ref={ref}>
         <SectionLabel num="02" label="Skills" />
 
         <motion.h2

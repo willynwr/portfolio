@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { SectionLabel } from "./animations";
+import { SectionLabel, SectionBg } from "./animations";
 import { projects } from "@/data/projects";
 
 const filters = [
@@ -90,8 +90,9 @@ export default function Projects() {
   const filtered = active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="projects" className="bg-[#0d0d0d] border-t border-[#1c1c1c]">
-      <div className="max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32" ref={ref}>
+    <section id="projects" className="relative bg-[#0d0d0d] border-t border-[#1c1c1c] overflow-hidden">
+      <SectionBg orb="blue" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32" ref={ref}>
         <SectionLabel num="04" label="Projects" />
 
         {/* Header row */}

@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
-import { SectionLabel } from "./animations";
+import { SectionLabel, SectionBg } from "./animations";
 import { experiences } from "@/data/experience";
 
 const typeStyle: Record<string, { pill: string; dot: string }> = {
@@ -81,8 +81,9 @@ export default function Experience() {
   const lineH = useTransform(scrollYProgress, [0.05, 0.9], ["0%", "100%"]);
 
   return (
-    <section id="experience" className="bg-[#0d0d0d] border-t border-[#1c1c1c]" ref={sectionRef}>
-      <div className="max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32">
+    <section id="experience" className="relative bg-[#0d0d0d] border-t border-[#1c1c1c] overflow-hidden" ref={sectionRef}>
+      <SectionBg orb="teal" />
+      <div className="relative z-10 max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-24 sm:py-32">
         <SectionLabel num="03" label="Experience" />
 
         <motion.h2

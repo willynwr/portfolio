@@ -7,27 +7,27 @@ export interface SkillCategory {
 export const skillCategories: SkillCategory[] = [
   {
     name: "Languages",
-    icon: "💻",
-    skills: ["PHP", "Python", "Java", "JavaScript", "TypeScript"],
+    icon: "",
+    skills: ["PHP", "Python", "JavaScript", "TypeScript"],
   },
   {
     name: "Frameworks",
-    icon: "🧩",
-    skills: ["Laravel", "FastAPI", "Bootstrap", "Tailwind CSS", "Alpine JS"],
+    icon: "",
+    skills: ["Laravel", "Slim PHP", "FastAPI", "Bootstrap", "Tailwind CSS", "Alpine JS", "Next JS", "React JS"],
   },
   {
     name: "Infrastructure",
-    icon: "⚙️",
+    icon: "",
     skills: ["Docker", "Git", "Linux", "Nginx", "VPS", "SSL", "AWS"],
   },
   {
     name: "Databases",
-    icon: "🗄️",
+    icon: "",
     skills: ["MySQL", "Firebase"],
   },
   {
     name: "AI & IoT",
-    icon: "🤖",
+    icon: "",
     skills: [
       "OpenAI API",
       "InsightFace",
@@ -41,7 +41,7 @@ export const skillCategories: SkillCategory[] = [
   },
   {
     name: "Design",
-    icon: "🎨",
+    icon: "",
     skills: ["Figma", "UI/UX"],
   },
 ];
