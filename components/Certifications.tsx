@@ -34,9 +34,20 @@ export default function Certifications() {
               whileHover={{ y: -3, borderColor: "#2a2a2a" }}
               className="flex items-start gap-3.5 p-4 bg-[#141414] border border-[#1e1e1e] rounded-xl group cursor-default"
             >
-              <span className="text-xl shrink-0 mt-0.5 grayscale group-hover:grayscale-0 transition-all duration-300">
-                {cert.icon}
-              </span>
+              {/* Logo or emoji icon */}
+              {cert.logo ? (
+                <div className="shrink-0 w-9 h-9 rounded-lg bg-white flex items-center justify-center overflow-hidden mt-0.5">
+                  <img
+                    src={cert.logo}
+                    alt={cert.issuer}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <span className="text-xl shrink-0 mt-0.5 grayscale group-hover:grayscale-0 transition-all duration-300">
+                  {cert.icon}
+                </span>
+              )}
               <div className="min-w-0">
                 <p className="text-[#d0d0d0] text-xs font-medium leading-snug mb-1 group-hover:text-[#f0f0f0] transition-colors">
                   {cert.name}
