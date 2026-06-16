@@ -13,9 +13,9 @@ const info = [
 ];
 
 const stats = [
-  { n: "3.50", sub: "/4.00", label: "GPA" },
-  { n: "8+", sub: "", label: "Projects" },
-  { n: "2+", sub: "yrs", label: "Exp." },
+  { n: "3.66", sub: "/4.00", label: "GPA" },
+  { n: "9+", sub: "", label: "Projects" },
+  { n: "1.5", sub: "yrs", label: "Exp." },
 ];
 
 export default function About() {
@@ -100,9 +100,8 @@ export default function About() {
               {info.map((item, i) => (
                 <div
                   key={item.label}
-                  className={`flex justify-between items-center px-4 py-3 gap-4 ${
-                    i < info.length - 1 ? "border-b border-[#1c1c1c]" : ""
-                  }`}
+                  className={`flex justify-between items-center px-4 py-3 gap-4 ${i < info.length - 1 ? "border-b border-[#1c1c1c]" : ""
+                    }`}
                 >
                   <span className="text-[#606060] text-xs shrink-0">{item.label}</span>
                   <span className="text-[#b0b0b0] text-xs text-right">{item.value}</span>

@@ -4,6 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { HangingIdCard } from "@/components/lightswind/HangingIdCard";
 
+const stats = [
+  { n: "3.66", sub: "/4.00", label: "GPA" },
+  { n: "9+", sub: "", label: "Projects" },
+  { n: "1.5", sub: "yrs", label: "Exp." },
+];
+
 const roles = ["Software Engineer", "Full-Stack Developer", "IoT Developer", "AI Engineer"];
 
 function useTyping(strings: string[], speed = 70, pause = 2400) {
@@ -147,7 +153,7 @@ export default function Hero() {
       />
 
       {/* ── Content ──────────────────────────────────────────── */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 py-36 sm:py-44">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 sm:px-14 lg:px-20 pt-28 sm:pt-32 pb-20 sm:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-0 items-center">
           {/* ── Left: text ────────────────────────────────────── */}
           <div className="max-w-2xl">
@@ -335,6 +341,72 @@ export default function Hero() {
           </motion.div>
 
         </div>
+
+        {/* ── About strip ──────────────────────────────────────── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="mt-16 sm:mt-20 border-t border-[#1a1a1a] pt-10"
+        >
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
+            {/* Left: bio */}
+            <div>
+              <p className="text-[11px] text-[#4f8ef7] font-mono tracking-widest uppercase mb-3">About</p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#f0f0f0] tracking-tight leading-snug mb-4">
+                Building software that{" "}
+                <span className="text-[#4f8ef7]">scales</span> &amp; <span className="text-[#4f8ef7]">ships.</span>
+              </h2>
+              <p className="text-[#707070] text-sm sm:text-[15px] leading-relaxed mb-5">
+                Internet Engineering student at{" "}
+                <span className="text-[#c0c0c0] font-medium">PENS</span>, working as Software Engineer at{" "}
+                <span className="text-[#c0c0c0] font-medium">Telkomsel</span> — building
+                full-stack apps, AI systems &amp; IoT solutions that ship to production.
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {["Full-Stack Dev", "Cloud & DevOps", "AI / ML", "IoT"].map((tag) => (
+                  <span
+                    key={tag}
+                    className="px-3 py-1 rounded-md bg-[#141414] border border-[#252525] text-[#707070] text-xs hover:text-[#b0b0b0] hover:border-[#4f8ef7]/30 transition-colors"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Right: stats + quick info */}
+            <div className="space-y-3">
+              <div className="grid grid-cols-3 gap-3">
+                {stats.map((s) => (
+                  <div key={s.label} className="bg-[#111] border border-[#1e1e1e] rounded-xl p-4 text-center">
+                    <div className="text-xl font-bold text-[#f0f0f0] leading-none mb-1">
+                      {s.n}<span className="text-[#4f8ef7] text-sm">{s.sub}</span>
+                    </div>
+                    <div className="text-[#555] text-[10px] uppercase tracking-wider">{s.label}</div>
+                  </div>
+                ))}
+              </div>
+              <div className="bg-[#111] border border-[#1e1e1e] rounded-xl overflow-hidden">
+                {[
+                  { label: "Location", value: "Surabaya, Indonesia" },
+                  { label: "University", value: "PENS — ITS Campus" },
+                  { label: "Email", value: "wildanwhat@gmail.com" },
+                  { label: "Status", value: "Open to opportunities ✦" },
+                ].map((item, i, arr) => (
+                  <div
+                    key={item.label}
+                    className={`flex justify-between items-center px-4 py-3 gap-4 ${i < arr.length - 1 ? "border-b border-[#1a1a1a]" : ""
+                      }`}
+                  >
+                    <span className="text-[#505050] text-xs shrink-0">{item.label}</span>
+                    <span className="text-[#909090] text-xs text-right">{item.value}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
 
       {/* Scroll cue */}
@@ -352,7 +424,7 @@ export default function Hero() {
         <span className="text-[#404040] text-[10px] tracking-widest uppercase rotate-90 origin-left translate-y-4">scroll</span>
       </motion.div>
 
-      <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#1e1e1e] to-transparent" />
+
     </section>
   );
 }
